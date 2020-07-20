@@ -1,2 +1,3 @@
 # OpenCOBOL
-Cobol practice
+
+Cobol training codes, made with OpenCobolIDE
