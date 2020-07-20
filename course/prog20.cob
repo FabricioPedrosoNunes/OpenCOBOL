@@ -1,0 +1,39 @@
+       IDENTIFICATION DIVISION.
+
+       PROGRAM-ID. PROG22.
+
+       DATA DIVISION.
+
+       FILE SECTION.
+
+       WORKING-STORAGE SECTION.
+       01  NUMERO        PICTURE IS 9(2).
+       01  QUANTOS       PICTURE IS 9(2).
+       01  MULTIPLICADOR PICTURE IS 9(2).
+       01  RESULTADO     PICTURE IS 9(4).
+
+       PROCEDURE DIVISION.
+
+       MAIN-PROCEDURE.
+           MOVE 0 TO MULTIPLICADOR.
+           PERFORM PEGA-TABUADA.
+           PERFORM EXIBIR-TABUADA.
+
+           STOP RUN.
+
+       PEGA-TABUADA.
+           DISPLAY "Qual a tabuada de multiplicacao(01-99)?".
+           ACCEPT NUMERO.
+           DISPLAY "Qual o tamanho da tabuada?".
+           ACCEPT QUANTOS.
+
+       EXIBIR-TABUADA.
+           DISPLAY " A TABUADA DE MULTIPLICACAO DE " NUMERO " EH ".
+           PERFORM CALCULA-E-EXIBE QUANTOS TIMES.
+
+       CALCULA-E-EXIBE.
+           ADD 1 TO MULTIPLICADOR.
+           COMPUTE RESULTADO = NUMERO * MULTIPLICADOR.
+           DISPLAY NUMERO " * " MULTIPLICADOR " = " RESULTADO.
+
+       END PROGRAM PROG22.
